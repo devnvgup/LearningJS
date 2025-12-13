@@ -1,144 +1,173 @@
-// learning javascript basic
+// =======================================================
+// LEARNING JAVASCRIPT BASIC
+// =======================================================
 
-// let const var
+// -------------------------------------------------------
+// 1. let / const / var
+// -------------------------------------------------------
 
-// let đc dùng nhiều trong es6+ (es6+ là phiên bản mới nhất của javascript)
-// var same let nhưng mà là dùng ở es5
+// ES6+ (phiên bản hiện đại của JavaScript) sử dụng: let, const
+// ES5 (phiên bản cũ) sử dụng: var
+// ❌ Hiện nay KHÔNG khuyến khích dùng var
 
-// tại sao h người ta dùng let mà ko dùng var
+// -------------------------------------------------------
+// TẠI SAO DÙNG let / const MÀ KHÔNG DÙNG var?
+// -------------------------------------------------------
 
-// lý do số 1 : var bị ghi đè, let văng error
-// let thì nó sẽ ko cho khai báo lại
-// var thì nó sẽ cho khai báo lại
+// ===== LÝ DO 1: var BỊ KHAI BÁO LẠI (GHI ĐÈ) =====
 
-// var count = 1
-// var count = 2
+// var cho phép khai báo lại → dễ gây bug
+// var count = 1;
+// var count = 2;
+// console.log(count); // 2
 
-// console.log("count", count);
+// let KHÔNG cho khai báo lại → an toàn hơn
+// let count = 1;
+// let count = 2; // ❌ Error
 
-// let count = 1
-// let count = 2
 
-// console.log("count", count);
+// ===== LÝ DO 2: HOISTING =====
 
-// lý do số 2 : HOISTING - var
-// console.log(a)
+// Với var
+// console.log(a); // undefined
 // var a = 10;
 
-// // complier
-// var a
-// console.log(a)
-// a = 10
+// Trình biên dịch hiểu như sau:
+// var a;
+// console.log(a);
+// a = 10;
 
-// console.log(a)
-// let a = 10
+// Với let
+// console.log(b); // ❌ Error
+// let b = 10;
 
-// lý do số 3: scope
+
+// ===== LÝ DO 3: SCOPE =====
+
+// var KHÔNG có block scope
 // if (true) {
-//     var a = 10
+//   var x = 10;
 // }
-// console.log(a)
+// console.log(x); // 10 ❌ khó kiểm soát
 
-// => khó kiểm soát trong dự án lớn
-
+// let CÓ block scope
 // if (true) {
-//     let a = 10
-//     console.log(a)
+//   let y = 10;
+//   console.log(y); // 10
 // }
-// console.log(a)
+// console.log(y); // ❌ Error
 
 
+// -------------------------------------------------------
+// 2. const (constant)
+// -------------------------------------------------------
 
-// Web / mobile app (React Native)/ app desktop (Electron)
-// Nodejs (backend), Nextjs (frontend), Nestjs (backend)
+// const dùng khi giá trị KHÔNG ĐƯỢC GÁN LẠI
 
+// const pi = 3.14;
+// pi = 25; // ❌ Error
 
-// let var 
-// 3 lý do để dùng let thay thế var
-// số 1 : var bị ghi đè, let văng error
-// số 2: HOISTING - var
-// số 3: scope
-
-// const  (viết tắt của constant)
-// khi nào thì mình dùng const ????
-// const pi = 3.14
-// const nhaAge = 28
-
-// ví dụ
-
-// const pi = 3.14 // duy nhất
-// // a = 15
-// // a = 20
-// // a = "truong"
-// pi = 25 
-// console.log(pi);
+// 👉 Quy tắc:
+// - Không cần gán lại → dùng const
+// - Cần gán lại → dùng let
+// - KHÔNG dùng var
 
 
-// const dùng để gán 1 lần duy nhất, ko cho gán lại 
-// khi nào dùng const : khi anh muốn giá trị đó ko thay đổi, và bi gán lại
+// -------------------------------------------------------
+// 3. Kiểu dữ liệu trong JavaScript
+// -------------------------------------------------------
+
+// JavaScript là ngôn ngữ dynamic typing (không cần khai báo kiểu)
+
+// Các kiểu dữ liệu cơ bản (Primitive):
+// - string     : "truong"
+// - number     : 10, 3.14, -5
+// - boolean    : true | false
+// - undefined  : khai báo nhưng chưa gán
+// - null       : cố ý không có giá trị
+
+// Kiểm tra kiểu dữ liệu
+// typeof variable
 
 
-// trong java
-// int, float, double,long, string, char
-// int songuyen = 1
-// float sothuc
-
-// trong js
-// let const var , từ let với const
-
-// js, reactjs
-
-// let number = false
-
-// console.log(typeof number) // check kiểu dữ liệu
+// Ví dụ:
+let number = false;
+console.log(typeof number); // boolean
 
 
-// kiểu dữ liệu trong js
-// string "truong"
-// number 10 3.14 -1 -2 -3
-// boolean true| fasle
-// underfined
-// null
+// -------------------------------------------------------
+// 4. undefined vs null
+// -------------------------------------------------------
 
-// underfined, biến khai báo nhưng chưa gán
+// undefined: biến khai báo nhưng CHƯA GÁN (JS tự gán)
+let a;
+console.log(a); // undefined
 
-let a
+// null: lập trình viên CHỦ ĐỘNG gán
+let c = null;
+console.log(c); // null
 
-console.log(a);
-
-// null
-
-let c = null
-
-
-console.log(c);
+// 👉 Note:
+// - undefined → JS nói "chưa có"
+// - null → dev nói "cố ý không có"
 
 
-// note: underfined là khai báo nhưng chưa gán, do js gán
-// null là do lập trình viên gán
+// -------------------------------------------------------
+// 5. Hoisting (tóm tắt)
+// -------------------------------------------------------
+
+// Hoisting là việc JS kéo phần KHAI BÁO var lên đầu
+
+// console.log(b);
+// var b = 10;
+// => b = undefined
+
+// let / const không cho truy cập trước khi khai báo
+// => an toàn hơn
 
 
-// let const var
-// kiểu dữ liệu
+// -------------------------------------------------------
+// 6. Tham trị & Tham chiếu
+// -------------------------------------------------------
+
+// ===== THAM TRỊ (PASS BY VALUE) =====
+// Áp dụng cho: number, string, boolean, null, undefined
+
+let x = 10;
+let y = x;
+
+y = 20;
+console.log(x); // 10 (không bị ảnh hưởng)
 
 
-// HOISTING
+// ===== THAM CHIẾU (PASS BY REFERENCE) =====
+// Áp dụng cho: object, array, function
 
-// var với let
+let objectA = {
+  name: "truong"
+};
 
-// HOISTING : là kéo khai báo var lên đầu khi trình biên dịch chạy
+let objectB = objectA; // cùng trỏ tới 1 vùng nhớ
 
-// anh nhã thấy
-console.log(b)
-var b = 10
+objectB.name = "nha";
+objectA.name = "123123";
 
-=> b => undefined
+console.log(objectB.name); // 123123
 
-// khi trình biên dịch chạy
-var b
-console.log(b)
-b = 10
+// 👉 Giải thích:
+// - objectA và objectB trỏ cùng 1 địa chỉ
+// - Thay đổi 1 → ảnh hưởng tất cả
 
-// trường hợp let
-console.log(a) // not defined
-let a = 10
+
+// -------------------------------------------------------
+// SUMMARY
+// -------------------------------------------------------
+
+// - let / const thay thế var
+// - const dùng khi không gán lại
+// - undefined: JS tự gán
+// - null: dev chủ động gán
+// - Primitive → tham trị (copy giá trị)
+// - Object → tham chiếu (copy địa chỉ)
+
+// =======================================================

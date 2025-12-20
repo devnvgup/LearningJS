@@ -171,3 +171,22 @@ console.log(objectB.name); // 123123
 // - Object → tham chiếu (copy địa chỉ)
 
 // =======================================================
+
+
+//  tham tri : cung vung nho
+
+let test1 = {
+  name : "nha"
+}
+
+let test2 = test1
+
+test2.name = "truong"
+test2.age = 30
+console.log(test1.age);
+
+
+
+
+
+

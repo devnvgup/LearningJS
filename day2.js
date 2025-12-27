@@ -153,3 +153,8 @@ console.log(!![]);             // true
 // ✔ String → Number: Number(), +value, parseInt()
 // ✔ Number → String: String(), toString()
 // ✔ Ép Boolean: Boolean(value) hoặc !!value
+
+
+
+
+

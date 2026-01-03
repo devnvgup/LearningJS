@@ -150,3 +150,4 @@ if (isAlive) {
 }else{
     console.log("Game Over");
 }
+ 

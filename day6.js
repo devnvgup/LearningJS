@@ -4,6 +4,7 @@
 // BT1: hello => Hello, viết hoa chữ cái đầu tiên
 // BT2: getUsername("abc@gmail.com") → "abc", trả về phần username của email
 // BT3: isURL("https://google.com") → true, Bắt đầu bằng http:// hoặc https://
+// hint : neu bat dau bang http:// hoac https:// => true (startWith)
 // BT4 : countWords("Hello world") → 2, Các từ cách nhau bởi 1 hoặc nhiều khoảng trắng
 
 // BT5: isValidEmail("abc@gmail.com") → true , Có ký tự @, có dấu . , @ đứng trước ., Không chứa khoảng trắng

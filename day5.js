@@ -212,3 +212,24 @@ SUMMARY
   + split
 =========================================================
 */
+
+// on lai bai
+
+// 1 length (check do dai)
+const strLen = "hello"
+console.log(strLen.length);
+// 2 toUpperCase (viet in hoa)
+console.log(strLen.toUpperCase())
+// 3 toLowerCase (viet thuong)
+console.log(strLen.toLowerCase())
+// 4 includes (bao gom)
+console.log(strLen.includes("ello"))
+// 5 indexOf (tim vi tri xuat hien dau tien cua chuoi con), neu no ko ton tai tra ve -1
+console.log(strLen.indexOf("hello"))
+// 6 slice: cat chuoi slice(start, end), neu trong truyen tham so thu 2, mac dich cat tu vi tri start den het chuoi
+console.log(strLen.slice(1,2)) //  h e l l o
+// 7 replace() : thay the chuoi dau tien ma no gap dc
+const testreplace = "Hello Java"
+console.log(testreplace.replace("Java","js")) // Hello js
+// console.log(testreplace.replace("Hello",""))
+// console.log(testreplace.replace("a","o")) // thay the chua a thanh chu o

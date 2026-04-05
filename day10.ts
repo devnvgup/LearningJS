@@ -17,6 +17,17 @@
 // b
 // c
 
+function soNguyeAm(str: string) : number{
+    let arr: string[] = ["a","e","i","u","o"]
+    let count : number = 0
+    for (let i = 0; i < str.length;i++){
+        if(arr.includes(str[i])){
+            count +=1
+        }
+    }
+    return count;
+}
+
 // 4. Đếm số chữ cái in hoa
 // Dùng Character.isUpperCase().
 // Input: "HeLLo"
